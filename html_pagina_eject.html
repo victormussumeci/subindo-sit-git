@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>site_eject</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<script >
+		var max=8;
+		var min=1;
+		var fi=1;
+		function mudarCor(obj,cor){
+			obj.style.backgroundColor=cor;
+		}
+		function IniciarSlide(){
+			carregarFoto("s1.jpg");
+		}
+		function carregarFoto(foto){
+			document.getElementById('moldura').style.backgroundImage="url("+foto+")";
+		}
+		function prox(){
+			fi++;
+			if(fi>max){
+				fi=min;
+			}
+			carregarFoto("s"+fi+".jpg");
+		}
+		function ant(){
+			fi--;
+			if(fi<min){
+				fi=max;
+			}
+			carregarFoto("s"+fi+".jpg");
+		}
+	</script>
+</head>
+<body onload="IniciarSlide();">
+	<div id="cabecalho">
+		<h1>Victor $tore</h1>
+		<ul>
+			<li ><a href="#sobreMimm" onmouseover="mudarCor(this,'white');" onmouseout="mudarCor(this,'#eeeeee')">sobre mim</a></li>
+			<li><a href="#preferencias" onmouseover="mudarCor(this,'white');" onmouseout="mudarCor(this,'#eeeeee')">preferencias</a></li>
+			<li><a href="#contatos" onmouseover="mudarCor(this,'white');" onmouseout="mudarCor(this,'#eeeeee')">contatos</a></li>
+			<li ><a href="#redesSocias" onmouseover="mudarCor(this,'white');" onmouseout="mudarCor(this,'#eeeeee')">Redes Sociais</a></li>
+		<ul>
+		<hr>	
+	</div>	
+	<br>
+	<br>
+	<br>
+	
+
+
+	<div id="sobreMimm">
+		<div class="texto_base">
+		<p>Meu nome é Victor tenho 20 anos, nasci e fui criado na cidade de Natal/RN.
+Concluí meu ensino médio no ano de 2016, no Instituto Brasil. Logo depois, fiz um curso profissionalizante em Java, que fez eu me aproximar mais da área da programação. Atualmente estou cursando o Bacharelado em Ciências e Tecnologia ( BCT ), na Universidade Federal do Rio Grande do Norte (UFRN).
+Escolhi o BCT para que eu pudesse e expandir meu conhecimento na área da computação.
+Sobre minhas perspectivas, espero sempre estar em constante aprendizado, e aberto para novas experiências, que possam agregar valor,  e ajudar no meu densenvolvimento pessoal, para que da mesma forma que aconteceu comigo eu possa ajudar outras pessoas.</p>
+		</div>	
+		<div class="fotos">
+			<img src="foto.jpg">
+		</div>
+
+	</div>
+		<hr>
+		<div id="preferencias">
+			
+			<div id="moldura">
+				<p>Entrando um pouco nas minhas preferencias pessoais, essas fotos mostram um pouco do que eu sou e um pouco do que eu gosto de fazer no meu tempo livre, que envolvem esportes, ler, ficar com familia e amigos alem de comer muita besteira.</p>
+
+			</div>
+			<input id="bt_prox" type="button" value="proximo" onclick="prox();">
+				<input id="bt_ant" type="button" value="anterior" onclick="ant();">	
+		</div>	
+		<hr>	
+</body>
+</html>
